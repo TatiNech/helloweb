@@ -1,0 +1,31 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+     - "1234:1234"
+    healthcheck:
+      test: curl --fail -s http://localhost:1234/ || exit 1
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+        - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+        - '--config.file=/etc/prometheus/prometheus.yml --web.listen-address=":1234"'
+    ports:
+        - '9090:9090'
+  node-exporter:
+    image: prom/node-exporter:latest
+    ports:
+        - '9100:9100'
+  grafana:
+    image: grafana/grafana:latest
+    environment:
+        - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+        - prometheus
+    ports:
+        - "3000:3000"
