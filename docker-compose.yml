@@ -13,10 +13,9 @@ services:
     image: prom/prometheus:latest
     volumes:
         - ./prometheus.yml:/etc/prometheus/prometheus.yml
-    command:
-        - '--config.file=/etc/prometheus/prometheus.yml --web.listen-address=":1234"'
+    command: ./prometheus --config.file=/etc/prometheus/prometheus.yml --web.listen-address=":1234"
     ports:
-        - '9090:9090'
+        - '9091:9091'
   node-exporter:
     image: prom/node-exporter:latest
     ports:
@@ -24,8 +23,9 @@ services:
   grafana:
     image: grafana/grafana:latest
     environment:
-        - GF_SECURITY_ADMIN_PASSWORD=admin
+        - GF_SECURITY_ADMIN_PASSWORD=newpassword
     depends_on:
         - prometheus
     ports:
         - "3000:3000"
+    
