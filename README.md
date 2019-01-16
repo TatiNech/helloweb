@@ -24,13 +24,13 @@ $
 As you can see, datasource and dash were automatically created
 
 
-![alt text](1st.png)
+![alt text](img/1st.png)
 
 ## Datasource was automatically populated, therefore prometheus metrics are accessible by default.
 
 
-![alt text](2nd.png)
-![alt text](3rd.png)
+![alt text](img/2nd.png)
+![alt text](img/3rd.png)
 
 
 ## Version
