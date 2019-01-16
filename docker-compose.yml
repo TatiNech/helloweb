@@ -1,31 +1,28 @@
-version: '3'
+version: '3.3'
 services:
+
   web:
-    build: .
+    build: '.'
+    container_name: 'helloweb'
     ports:
-     - "1234:1234"
+      - '1234:1234'
     healthcheck:
       test: curl --fail -s http://localhost:1234/ || exit 1
       interval: 1m30s
       timeout: 10s
       retries: 3
   prometheus:
-    image: prom/prometheus:latest
-    volumes:
-        - ./prometheus.yml:/etc/prometheus/prometheus.yml
-    command: ./prometheus --config.file=/etc/prometheus/prometheus.yml --web.listen-address=":1234"
+    build: './prometheus'
+    container_name: 'prometheus'
     ports:
-        - '9091:9091'
-  node-exporter:
-    image: prom/node-exporter:latest
-    ports:
-        - '9100:9100'
+      - '9090:9090'
+
   grafana:
-    image: grafana/grafana:latest
-    environment:
-        - GF_SECURITY_ADMIN_PASSWORD=newpassword
-    depends_on:
-        - prometheus
+    build: './grafana'
+    container_name: 'grafana'
     ports:
-        - "3000:3000"
-    
+      - '3000:3000'
+
+  node_exporter:
+    image: 'quay.io/prometheus/node-exporter'
+    container_name: 'node_exporter'
