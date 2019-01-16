@@ -22,10 +22,10 @@ $
 
 ## Open 0.0.0.0:3000 in your browser and enter admin/newpassword as for login/password
 As you can see, datasource and dash were automatically created
+<![](Screenshot from 2019-01-16 22-54-02.png)
 ![alt text](https://github.com/azizakubat/helloweb/master/Screenshot from 2019-01-16 22-54-02.png)
 
-## Datasource was automatically populated, therefore prometheus metrics are accessible
-by default.
+## Datasource was automatically populated, therefore prometheus metrics are accessible by default.
 ![alt text](https://github.com/azizakubat/helloweb/master/Screenshot from 2019-01-16 22-54-25.png)
 ![alt text](https://github.com/azizakubat/helloweb/master/Screenshot from 2019-01-16 22-57-24.png)
 ## Version
