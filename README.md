@@ -13,21 +13,21 @@ $
 ```
 Browse to 0.0.0.0:1234 and you should get basic hello-world web app
 
-# To access the prometheus metrics visualized in grafana run docker-compose up
+## To access the prometheus metrics visualized in grafana run docker-compose up
 ```
 $ docker-compose up
  ...
 $
 ```
 
-Open 0.0.0.0:3000 in your browser and enter admin/newpassword as for login/password
+## Open 0.0.0.0:3000 in your browser and enter admin/newpassword as for login/password
 As you can see, datasource and dash were automatically created
-![](Screenshot from 2019-01-16 22-54-02.png)
+![alt text](https://github.com/azizakubat/helloweb/master/Screenshot from 2019-01-16 22-54-02.png)
 
-Datasource was automatically populated, therefore prometheus metrics are accessible
+## Datasource was automatically populated, therefore prometheus metrics are accessible
 by default.
-![](Screenshot from 2019-01-16 22-54-25.png)
-![](Screenshot from 2019-01-16 22-57-24.png)
+![alt text](https://github.com/azizakubat/helloweb/master/Screenshot from 2019-01-16 22-54-25.png)
+![alt text](https://github.com/azizakubat/helloweb/master/Screenshot from 2019-01-16 22-57-24.png)
 ## Version
 * Version 1.0
 
