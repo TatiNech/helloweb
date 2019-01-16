@@ -22,6 +22,9 @@ $
 
 ## Open 0.0.0.0:3000 in your browser and enter admin/newpassword as for login/password
 As you can see, datasource and dash were automatically created
+
+![Screenshot](Screenshot from 2019-01-16 22-54-02.png)
+
 <![](Screenshot from 2019-01-16 22-54-02.png)
 ![alt text](https://github.com/azizakubat/helloweb/master/Screenshot from 2019-01-16 22-54-02.png)
 
